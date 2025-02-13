@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psychopy_tobii_controller_plugins"
+version = "1.3.0"
+description = "Plugins for Tobii Controller for PsychoPy'"
+readme = "README.md"
+requires-python = ">= 3.7"
+license = {text = "GNU General Public License v3 (GPLv3)"}
+authors = [
+  { name = "Hiroyuki Sogo", email = "hsogo12600@gmail.com" },
+
+]
+classifiers = [
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+urls.homepage = "https://github.com/hsogo/psychopy_tobii_controller"
+urls.repository = "https://github.com/hsogo/psychopy_tobii_controller"
+dependencies = [
+  "psychopy",
+  "psychopy_tobii_controller",
+]
+
+[tool.setuptools.packages.find]
+where = ["", "psychopy_tobii_controller_plugins",]
+
+[tool.setuptools.package-data]
+"*" = ["*.png", ]
+
+[project.entry-points."psychopy.experiment.components"]
+ptc_init_component = "psychopy_tobii_controller_plugins:ptc_init_component"
+ptc_cal_component = "psychopy_tobii_controller_plugins:ptc_cal_component"
+ptc_rec_component = "psychopy_tobii_controller_plugins:ptc_rec_component"
+ptc_message_component = "psychopy_tobii_controller_plugins:ptc_message_component"
+ptc_getpos_component = "psychopy_tobii_controller_plugins:ptc_getpos_component"
